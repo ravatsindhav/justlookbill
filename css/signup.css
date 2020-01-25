@@ -1,0 +1,148 @@
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+::placeholder
+{
+  opacity:1.0;
+}
+a{text-decoration: none;}
+.bg
+  { 
+    /*
+   background-image:url("4.jpg");
+    background-size:100% 100%; */
+    background-color:black;
+  }
+/* Full-width input fields */
+.in{
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border:none;
+  border-bottom:solid;
+  box-sizing: border-box;
+ background-color:whitesmoke;
+}
+
+/* Set a style for all buttons */
+.sub {
+  border-color: #2196F3;
+  color: dodgerblue;
+  /*background-color: white;*/
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width:40%;
+  border:solid;
+  border-radius:20px 20px 20px 20px;
+}
+.sub:hover
+  {
+    border-radius:20px 20px 20px 20px;
+    background: #2196F3;
+    color: white;
+    opacity: 0.8;
+  }
+
+/* Center the image and position the close button */
+.signupimgcontainer {
+  
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+ /* border-radius: 50%;*/
+}
+
+.signupcontainer {
+  padding: 16px;
+}
+.login {
+    text-decoration: none;
+    color:darkcyan;
+    font-size: 1.3em;
+  }
+.login:hover {  color:red; }
+.haveac {
+  padding-top: 26px;
+}
+
+/* The Modal (background) */
+.signupmodal {
+  
+  border:none;
+  display:contents; /* Hidden by default */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color:whitesmoke;
+  /*background-color: rgb(0,0,0); /* Fallback color */
+ /* background-color: rgba(0,0,0,0.4);*/ /* Black w/ opacity */
+  padding-top: 60px;
+  
+}
+
+/* Modal Content/Box */
+.signupmodal-content {
+  opacity:1.0;
+  background-color:whitesmoke;
+  border:none;
+  border-radius:10px 10px 10px 10px;
+  /*background-color: #fefefe;*/
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width:30%; /* Could be more or less, depending on screen size */
+}
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 500px) {
+  .signupmodal{padding-top:500px;}
+  span.psw {float:right;}
+  .in
+    {
+        font-size:1.0em;
+        padding: 6px 10px;
+        margin: 4px 0;
+    }
+    
+    .signupmodal-content {padding-top:100px; width:90%;}
+  /*.bg{background-image:none;background-color: teal;}*/
+  
+</style>

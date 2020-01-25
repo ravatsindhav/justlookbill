@@ -1,0 +1,78 @@
+<style>body {
+    font-family: "Lato", sans-serif;
+}
+
+.bg {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.menu {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.active,
+.menu:hover {
+    background-color: darkturquoise;
+    color: black;
+}
+
+.closebtn {
+    text-decoration: none;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 40px;
+    margin-left: 50px;
+    color: #818181;
+}
+
+.closebtn:hover {
+    color: red;
+}
+
+.menu-bar {
+    width: 100%;
+    height: 41px;
+    background-color: rgb(56, 58, 61);
+}
+
+.brand-name {
+    font-size: 1.7em;
+    font-family: Constantia;
+}
+
+.menu-user-ac {
+    padding-right: 10px;
+    padding-top: 5px;
+    float: right;
+}
+
+@media screen and (max-height: 500px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .menu {
+        font-size: 1.6em;
+    }
+}
+
+</style>

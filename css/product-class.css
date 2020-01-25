@@ -1,0 +1,42 @@
+<style>body {
+    background-color: aqua;
+}
+
+.prod-dv {
+    width: 60%;
+    height: 30px;
+    background-color: #OOFFOO;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    margin-left: 20%;
+}
+
+.product-button {
+    font-size: 1.2em;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: red;
+}
+
+.product-item-div {
+    width: 60%;
+    height: 30px;
+    background-color: rgb(101, 206, 171);
+    padding-top: 10px;
+    padding-bottom: 7px;
+    margin-left: 20%;
+}
+
+@media screen and (max-height: 500px) {
+    .product-div {
+        width: 100%;
+        margin-left: 0%;
+    }
+    .product-button {
+        font-size: 0.8em;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+</style>

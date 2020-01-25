@@ -1,0 +1,215 @@
+<style>
+
+
+::placeholder {
+    color: black;
+    opacity: 1.0;
+}
+
+textarea::placeholder {
+    color: black;
+    opacity: 1.0;
+}
+
+
+  
+/* The Modal (background) */
+
+.modal {
+    overflow: auto;
+    /*display: none;
+    Hidden by default */
+    /* position: fixed; */
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 40px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    /* Full height */
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+
+/* Add Animation 
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+*/
+
+
+/* The Close Button */
+
+
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: whitesmoke;
+    color: #1162ad;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    background-color: whitesmoke;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: whitesmoke;
+    color: white;
+    height: 20px;
+}
+
+
+
+.pinput {
+    color: black;
+    width: 40%;
+    padding: 12px 20px;
+    padding-top: 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    font-size: 1.2em;
+    border-bottom: solid;
+    box-sizing: border-box;
+    border-color: black;
+    background-color: whitesmoke;
+}
+
+.psub {
+    border-color: #2196F3;
+    color: dodgerblue;
+    /*background-color: white;*/
+    /*background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
+    background-size: 200%;*/
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: 30%;
+    border: solid;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.psub:hover {
+    border-radius: 20px 20px 20px 20px;
+    background: #2196F3;
+    /* background-position: right;*/
+    color: white;
+    opacity: 0.8;
+}
+
+.prodselect {
+    width: 40%;
+    border: none;
+    color: black;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-bottom: solid;
+    border-color: black;
+    background-color: whitesmoke;
+}
+
+.prodoption {
+    background-color: whitesmoke;
+}
+
+.pimgselect {
+    color: black;
+    width: 30%;
+    padding-top: 20px;
+    margin: 8px 0;
+    display: inline-block;
+    font-size: 1.1em;
+    background-color: whitesmoke;
+}
+
+.bimgsel {
+    font-size: 1.2em;
+    color: black;
+}
+
+.pdetail {
+    color: black;
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    height: 70px;
+    font-size: 1.5em;
+    border-bottom: solid;
+    box-sizing: border-box;
+    border-color: black;
+    background-color: whitesmoke;
+    opacity: 1.0;
+}
+
+@media screen and (max-width: 500px) {
+    .modal-content {
+        width: 100%;
+    }
+    .addnewprod-btn {
+        width: 80%;
+    }
+    .pinput {
+        width: 80%;
+        font-size: 1.0em;
+    }
+    .psub {
+        font-size: 1.0em;
+    }
+    .prodselect {
+        width: 80%;
+        font-size: 1.0em;
+    }
+    .pdetail {
+        width: 80%;
+    }
+}
+
+</style>
