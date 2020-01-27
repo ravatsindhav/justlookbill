@@ -21,7 +21,7 @@
                 <div class="modal-header">
                     <h2>Add New Product</h2>
                 </div>
-                <form action="" method="POST">
+                <form action="addcategory.jsp" method="POST">
                     <div class="modal-body">
                         <br>
 
