@@ -6,6 +6,8 @@
     <link href="../css/add-prod-model.css" rel="stylesheet">
     <script src="../js/add-prod-model.js"></script>
     <title>Add-Product | Just Look</title>
+    <%@ page import ="java.sql.*" %>
+        <%@ page import ="javax.sql.*" %>
 </head>
 
 <body class="bg">
@@ -28,15 +30,34 @@
 
                         <input type="text" name="ptitle" value="" placeholder="Enter Product Title" class="pinput" required/> <br><br>
 
-
                         <select name="ptype" required class="prodselect">
-                        <option value="" class="prodoption">Please Select Product Category</option>
-                        <option value="Shirt" class="prodoption">Shirt</option>
-                        <option value="Formal Shirt" class="prodoption">Formal Shirt</option>
-                        <option value="T Shirt" class="prodoption">T-Shirt</option>
-                        <option value="Jeans Pant" class="prodoption">Jeans Pant</option>
-                        <option value="Cotton Pant" class="prodoption">Cotton Pant</option>
-                        <option value="Formal Pant" class="prodoption">Formal Pant</option>
+                            <option value="" class="prodoption">Please Select Product Category</option>
+                        <%
+                            try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
+                            Statement st= con.createStatement();  
+                                    ResultSet rs=st.executeQuery("select * from category");  
+                                    while(rs.next())  
+                                    {
+                                        
+                                        %>
+
+                                
+                                <option value="<% out.println(rs.getString(2)); %>" class="prodoption"><% out.println(rs.getString(2)); %></option>
+                                <%
+                                        
+                                    }
+                                    
+                                    con.close();  
+                                } catch (Exception e) {
+                                    out.println(e);
+                                }
+                        %>
+
+                               
+                        
+                      
             
                      </select>
                         <br> <br>
@@ -47,7 +68,7 @@
                         <b id="msg" style="color:red;"></b>
                         <br>
 
-                        <input type="text" name="psize" value="" placeholder="Enter Product Size" class="pinput" required/> <br>
+                        <input type="text" name="pqty" value="" placeholder="Enter Product Quantity" class="pinput" required/> <br>
 
                         <input type="submit" name="save" value="Save" class="psub" require>
 
