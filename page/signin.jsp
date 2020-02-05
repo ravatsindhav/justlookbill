@@ -15,7 +15,7 @@
     <!-- Sign up Modal -->
     <div id="signup" class="signupmodal">
 
-        <form class="signupmodal-content animate" action="user.jsp" method="post">
+        <form class="signupmodal-content animate" action="user.jsp" method="POST">
 
             <div class="signupimgcontainer">
                 <img src="../icon/user.svg" alt="Avatar" class="avatar">

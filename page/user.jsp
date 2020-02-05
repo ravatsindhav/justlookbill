@@ -9,7 +9,7 @@
                     java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
                     Statement st= con.createStatement();
                     String sql="select * from admin where unm='"+userid+"'";
-                    ResultSet rs=st.executeQuery(sql);
+                    Resultset rs=st.executeUpdate(sql);
                      
                    while(rs.next())
                     {   
