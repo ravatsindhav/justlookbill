@@ -33,3 +33,8 @@
     
 
 %>
+                    <div align="center" class="modal-content"><br><br>
+                        <div class="modal-header">
+                            <a class="psub" href="viewcategory.jsp">View Category </a>
+                        </div><br><br>
+                    </div>

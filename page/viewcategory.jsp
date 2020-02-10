@@ -12,24 +12,24 @@
     <%@ page import ="javax.sql.*" %>
 
         <body>
+            <%@ include file="header.jsp" %>
+                <br><br>
 
-            <br><br>
 
 
+                <div class="container">
+                    <div class="table-responsive">
 
-            <div class="container">
-                <div class="table-responsive">
-
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Category id</th>
-                                <th>Category Name</th>
-                                <th>Category Detail</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <%
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Category id</th>
+                                    <th>Category Name</th>
+                                    <th>Category Detail</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <%
                     try {
                         Class.forName("com.mysql.jdbc.Driver");
                         java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
@@ -38,33 +38,33 @@
                         while(rs.next())  
                         { %>
 
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <% out.println(rs.getString(1)); %>
-                                    </td>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <% out.println(rs.getString(1)); %>
+                                        </td>
 
-                                    <td>
-                                        <% out.println(rs.getString(2)); %>
-                                    </td>
+                                        <td>
+                                            <% out.println(rs.getString(2)); %>
+                                        </td>
 
-                                    <td>
-                                        <% out.println(rs.getString(3)); %>
-                                    </td>
-
-
-                                    <td>
-                                        <a href="deletecontact.php?cid=<?php echo $r['id'];?>" class="btn btn-outline-danger">Delete</a>
-                                    </td>
-                                </tr>
+                                        <td>
+                                            <% out.println(rs.getString(3)); %>
+                                        </td>
 
 
-                                <% } %>
-                            </tbody>
-                    </table>
+                                        <td>
+                                            <a href="deletecontact.php?cid=<?php echo $r['id'];?>" class="btn btn-outline-danger">Delete</a>
+                                        </td>
+                                    </tr>
+
+
+                                    <% } %>
+                                </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
-            <%   
+                <%   
                 
                 con.close();  
             } catch (Exception e) {

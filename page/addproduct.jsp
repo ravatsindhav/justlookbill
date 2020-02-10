@@ -26,9 +26,9 @@
                 <form name="addproduct" action="" method="POST">
                     <div class="modal-body">
                         <br>
-                        <input type="text" name="pid" value="" placeholder="Enter Product ID" class="pinput" required/> <br>
+                        <input type="text" name="pid" value="" placeholder="Enter Product ID" class="pinput" required/> <br><br>
 
-                        <input type="text" name="ptitle" value="" placeholder="Enter Product Title" class="pinput" required/> <br><br>
+
 
                         <select name="ptype" required class="prodselect">
                             <option value="" class="prodoption">Please Select Product Category</option>
@@ -62,6 +62,7 @@
                      </select>
                         <br> <br>
 
+                        <input type="text" name="ptitle" value="" placeholder="Enter Product Title" class="pinput" required/> <br><br>
 
                         <input type="text" name="pprice" value="" placeholder="Enter Product Price" class="pinput" onkeyup="priceverify()" id="price" required/>
                         <!-- onkeyup="priceverify()" id="price" -->
@@ -69,6 +70,8 @@
                         <br>
 
                         <input type="text" name="pqty" value="" placeholder="Enter Product Quantity" class="pinput" required/> <br>
+
+                        <input type="text" name="pdetail" value="" placeholder="Enter Product Detail" class="pinput" required/> <br>
 
                         <input type="submit" name="save" value="Save" class="psub" require>
 
