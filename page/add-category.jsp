@@ -1,53 +1,32 @@
-<!DOCTYPE html>
-<html>
+<%@ page import ="java.sql.*" %>
+    <%@ page import ="javax.sql.*" %>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/add-prod-model.css" rel="stylesheet">
-    <script src="../js/add-prod-model.js"></script>
-    <title>Add-Category | Just Look</title>
-</head>
+        <%
 
-<body class="bg">
-    <%@ include file="header.jsp" %>
-        <br><br>
+    String catname=request.getParameter("catname");
+    String catdetail=request.getParameter("catdetail");
+    try
+        {
+         
+            Class.forName("com.mysql.jdbc.Driver");
+            java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
+                
+            Statement st= con.createStatement();
+                
+                int i=st.executeUpdate("insert into category(category_name,category_detail) values('"+catname+"','"+catdetail+"')");;
+               %>
+            <script>
+                alert("Category Added Successfully");
+            </script>
+            <%
+                con.close();
+                <jsp:include page="addcategory.jsp">
 
-        <!-- The Modal 
-<div id="myModal" class="modal">
--->
-        <div id="myModal">
-            <!-- Modal content -->
-            <div align="center" class="modal-content">
-                <div class="modal-header">
-                    <h2>Add New Product</h2>
-                </div>
-                <form action="addcategory.jsp" method="POST">
-                    <div class="modal-body">
-                        <br>
+        }
+        catch (Exception e) 
+        {
+            out.println(e);
+        }
+    
 
-
-                        <input type="text" name="catname" value="" placeholder="Enter Category Name" class="pinput" required/> <br>
-
-                        <input type="text" name="catdetail" value="" placeholder="Enter Category Detail" class="pinput" required/> <br>
-
-                        <input type="submit" name="save" value="Save" class="psub" require>
-
-                    </div>
-                </form>
-                <div class="modal-footer">
-
-                </div>
-            </div>
-            <br>
-            <br>
-            <br>
-            <br>
-        </div>
-
-
-
-
-
-</body>
-
-</html>
+%>

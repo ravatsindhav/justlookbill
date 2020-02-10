@@ -24,8 +24,8 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <br><br>
         <a href="index.php" class="menu">Home</a>
-        <a href="add-product.jsp" class="menu">Add-Product</a>
-        <a href="add-category.jsp" class="menu">Add-category</a>
+        <a href="addproduct.jsp" class="menu">Add Product</a>
+        <a href="addcategory.jsp" class="menu">Add category</a>
         <a href="wishlist.php" class="menu">Wishlist</a>
         <a href="user.php" class="menu">Users</a>
 
