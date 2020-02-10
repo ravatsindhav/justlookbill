@@ -26,8 +26,8 @@
         <a href="index.php" class="menu">Home</a>
         <a href="addproduct.jsp" class="menu">Add Product</a>
         <a href="addcategory.jsp" class="menu">Add category</a>
-        <a href="wishlist.php" class="menu">Wishlist</a>
-        <a href="user.php" class="menu">Users</a>
+        <a href="viewcategory.jsp" class="menu">View category</a>
+
 
         <a href="logout.php" class="menu">Logout</a>
     </div>

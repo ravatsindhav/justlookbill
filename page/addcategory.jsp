@@ -19,7 +19,7 @@
             <!-- Modal content -->
             <div align="center" class="modal-content">
                 <div class="modal-header">
-                    <h2>Add New Product</h2>
+                    <h2>Add New Category</h2>
                 </div>
                 <form action="add-category.jsp" method="POST">
                     <div class="modal-body">
