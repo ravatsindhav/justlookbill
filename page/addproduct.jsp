@@ -23,33 +23,33 @@
                 <div class="modal-header">
                     <h2>Add New Product</h2>
                 </div>
-                <form name="addproduct" action="" method="POST">
+                <form name="addproduct" action="add-product.jsp" method="POST">
                     <div class="modal-body">
                         <br>
                         <input type="text" name="pid" value="" placeholder="Enter Product ID" class="pinput" required/> <br><br>
 
 
 
-                        <select name="ptype" required class="prodselect">
-                            <option value="" class="prodoption">Please Select Product Category</option>
+                        <select name="pcat" class="prodselect" required>
+                            <option value="" class="prodoption" >Please Select Product Category</option>
                         <%
                             try {
                             Class.forName("com.mysql.jdbc.Driver");
-                            java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
-                            Statement st= con.createStatement();  
+                            java.sql.Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
+                            Statement st= con1.createStatement();  
                                     ResultSet rs=st.executeQuery("select * from category");  
                                     while(rs.next())  
                                     {
-                                        
+                                        String val =rs.getString(2);
                                         %>
 
-                                
-                                <option value="<% out.println(rs.getString(2)); %>" class="prodoption"><% out.println(rs.getString(2)); %></option>
+                                            
+                                <option value="<%= val %>" class="prodoption"><% out.println(rs.getString(2)); %></option>
                                 <%
                                         
                                     }
                                     
-                                    con.close();  
+                                    con1.close();  
                                 } catch (Exception e) {
                                     out.println(e);
                                 }
@@ -87,7 +87,11 @@
             <br>
         </div>
 
-
+        <div align="center" class="modal-content"><br><br>
+            <div class="modal-header">
+                <a class="psub" href="viewproduct.jsp">View Product </a>
+            </div><br><br>
+        </div>
 
         <!-- price verify -->
         <script>
