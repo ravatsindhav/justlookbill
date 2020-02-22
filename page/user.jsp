@@ -15,7 +15,7 @@
                     {   
                         
                         /*out.println(rs.getString(3));*/
-                       if(psw = rs.getString(3))
+                       if(psw.equals(rs.getString(3)))
                         {
                             out.println("Success");
                         }

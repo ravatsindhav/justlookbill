@@ -22,6 +22,10 @@
                     /* border: none;*/
                     background-color: whitesmoke;
                 }
+                
+                .totalamt {
+                    font-size: 1.5em;
+                }
             </style>
             <script src="angular.min.js"></script>
 </head>
@@ -40,19 +44,23 @@
                 <div class="modal-header">
                     <h2>Add New Bill</h2>
                 </div>
-                <form name="addproduct" action="dyn.jsp" method="POST">
+                <form name="addproduct" action="add-bill.jsp" method="POST">
                     <div class="modal-body">
                         <br>
+
+
+                        <input type="text" name="billno" class="pinput" placeholder="Enter Bill No"> &nbsp;&nbsp;&nbsp;
+                        <input type="date" name="date" class="pinput"> <br>
 
                         <input type="text" name="cnm" class="pinput" placeholder="Enter Customer Name"> &nbsp;&nbsp;&nbsp;
                         <input type="text" name="cmob" class="pinput" placeholder="Enter Customer Mobile"> <br><br>
 
                         <h3>Product 1</h3>
 
-                        <div data-ng-app="" data-ng-init="quantity=1;price=5;total={{quantity * price}};">
+                        <div data-ng-app="" data-ng-init="quantity=1;price=5;total={{quantity * price}};totalamt=total;">
 
-                            <select name="p1cat" class="prodselect" required>
-                            <option value="" class="prodoption" >Please Select Product Category</option>
+                            <select name="pid" class="prodselect" required>
+                            <option value="" class="prodoption" >Product Id</option>
                         <%
                             try {
                             Class.forName("com.mysql.jdbc.Driver");
@@ -79,57 +87,19 @@
 
 
 
-                            <input type="number" name="p1price" placeholder="Price" ng-model="price">&nbsp;&nbsp;
-                            <input type="number" name="p1qty" placeholder="Quantity" ng-model="quantity">&nbsp;&nbsp;
-                            <input type="number" name="p1totamt" placeholder="Total" ng-model="total"><b style="color:white;">{{ total= quantity * price }}
+                            <input type="number" name="pprice" placeholder="Price" ng-model="price">&nbsp;&nbsp;
+                            <input type="number" name="pqty" placeholder="Quantity" ng-model="quantity">&nbsp;&nbsp;
+                            <input type="number" name="ptotal" placeholder="Total" ng-model="total"><b style="color:white;">{{ total= quantity * price }}
                             </b>
-
-                        </div><br><br>
-
-                        <h3>Product 2</h3>
-
-                        <div data-ng-app="" data-ng-init="p2quantity=1;p2price=5;p2total={{p2quantity * p2price}};">
-
-                            <select name="p2cat" class="prodselect" required>
-                            <option value="" class="prodoption" >Please Select Product Category</option>
-                        <%
-                            try {
-                            Class.forName("com.mysql.jdbc.Driver");
-                            java.sql.Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
-                            Statement st= con1.createStatement();  
-                                    ResultSet rs=st.executeQuery("select * from product");  
-                                    while(rs.next())  
-                                    {
-                                        String val =rs.getString(2);
-                                        %>
-
-                                            
-                                <option value="<%= val %>" class="prodoption"><% out.println(rs.getString(2)); %></option>
-                                <%
-                                        
-                                    }
-                                    
-                                    con1.close();  
-                                } catch (Exception e) {
-                                    out.println(e);
-                                }
-                        %>
-                     </select>&nbsp;&nbsp;
-
-
-
-                            <input type="number" name="p2price" placeholder="p2Price" ng-model="p2price">&nbsp;&nbsp;
-                            <input type="number" name="p2qty" placeholder="p2Quantity" ng-model="p2quantity">&nbsp;&nbsp;
-                            <input type="number" name="p2totamt" placeholder="p2Total" ng-model="p2total"><b style="color:white;">{{ p2total= p2quantity * p2price }}
-                            </b>
-
-                        </div><br><br>
+                            <br>
 
 
 
 
-
-                        <input type="date" name="date" class="pinput" placeholder="Enter Customer Mobile"> <br><br>
+                            <b class="totalamt">Total Amount</b> &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="total" placeholder="Total Amount" ng-model="totalamt"><b style="color:white;">{{ totalamt= total * 1 }}
+                        </b>
+                        </div>
+                        <br><br>
 
 
                         <input type="submit" name="save" value="Save" class="psub" require>
@@ -139,6 +109,12 @@
                 <div class="modal-footer">
 
                 </div>
+            </div>
+
+            <div align="center" class="modal-content"><br><br>
+                <div class="modal-header">
+                    <a class="psub" href="viewbill.jsp">View All Bills </a>
+                </div><br><br>
             </div>
 </body>
 
