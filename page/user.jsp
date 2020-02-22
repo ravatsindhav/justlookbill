@@ -17,10 +17,17 @@
                         /*out.println(rs.getString(3));*/
                        if(psw.equals(rs.getString(3)))
                         {
-                            out.println("Success");
+                            session.setAttribute("uid",userid);
+                            %>
+            <jsp:forward page="page/home.jsp">
+                <%
                         }
                         else
-                        {
+                        {%>
+                    <script>
+                        alert("Wrong userid Or Password")
+                    </script>
+                    <%
                             out.println("Fail");
                         }
                     }

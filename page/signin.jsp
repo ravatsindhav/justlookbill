@@ -10,8 +10,6 @@
 
 <body class="bg">
 
-
-
     <!-- Sign up Modal -->
     <div id="signup" class="signupmodal">
 
