@@ -24,13 +24,15 @@
                         response.setHeader("Location", site);
                     }
                     else
-                    {
-                        out.println("nooo"); 
+                    {%>
+                <script>
+                    alert("PLease Enter Correct Email Or Password");
+                </script>
+
+                <%@ include file="index.jsp"%>
+                    <%
                     }
                     con.close();  
             } 
             catch (Exception e) 
-            {
-                out.println(e);
-            }
-    %>
+            { out.println(e);  } %>

@@ -94,7 +94,7 @@
                                     <th>Total Amount </th>
                                     <th>Date </th>
 
-                                    <th>Delete</th>
+
                                 </tr>
                             </thead>
                             <%
@@ -109,7 +109,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <% out.println(rs.getString(1)); %>
+                                            <% String id=rs.getString(1); out.println(id); %>
                                         </td>
 
                                         <td>
@@ -140,9 +140,7 @@
                                             <% out.println(rs.getString(9)); %>
                                         </td>
 
-                                        <td>
-                                            <a href="deletecontact.php?cid=<?php echo $r['id'];?>" class="btn btn-outline-danger">Delete</a>
-                                        </td>
+
                                     </tr>
 
 

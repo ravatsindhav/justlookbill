@@ -3,7 +3,7 @@
 
         <%
 
-    String id  =   request.getParameter("cid");
+    String id  =   request.getParameter("pid");
     
     try
         {
@@ -14,13 +14,13 @@
             Statement st1= conn.createStatement();
            
                 
-                int i=st1.executeUpdate("DELETE FROM product WHERE id="+id);
+                int i=st1.executeUpdate("DELETE FROM category WHERE id="+id);
                 conn.close();
            %>
             <script>
                 alert("Product Deleted Successfully")
             </script>
-            <jsp:forward page="viewproduct.jsp" />
+            <jsp:forward page="viewcategory.jsp" />
             <%     
             
         }

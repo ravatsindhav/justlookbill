@@ -145,9 +145,7 @@
                                                 <% out.println(rs.getString(9)); %>
                                             </td>
 
-                                            <td>
-                                                <a href="deletecontact.php?cid=<?php echo $r['id'];?>" class="btn btn-outline-danger">Delete</a>
-                                            </td>
+
                                         </tr>
 
 
