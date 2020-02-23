@@ -54,50 +54,88 @@
 
                         <input type="text" name="cnm" class="pinput" placeholder="Enter Customer Name"> &nbsp;&nbsp;&nbsp;
                         <input type="text" name="cmob" class="pinput" placeholder="Enter Customer Mobile"> <br><br>
-
+                        <b style="font-size:1.9em;">Add Item<a href="#" style="text-decoration: none;font-size:2.0em;">+</a></b>
                         <h3>Product 1</h3>
 
                         <div data-ng-app="" data-ng-init="quantity=1;price=5;total={{quantity * price}};totalamt=total;">
 
                             <select name="pid" class="prodselect" required>
-                            <option value="" class="prodoption" >Product Id</option>
-                        <%
-                            try {
-                            Class.forName("com.mysql.jdbc.Driver");
-                            java.sql.Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
-                            Statement st= con1.createStatement();  
-                                    ResultSet rs=st.executeQuery("select * from product");  
-                                    while(rs.next())  
-                                    {
-                                        String val =rs.getString(2);
-                                        %>
-
-                                            
-                                <option value="<%= val %>" class="prodoption"><% out.println(rs.getString(2)); %></option>
+                                    <option value="" class="prodoption" >Product Id</option>
                                 <%
-                                        
-                                    }
-                                    
-                                    con1.close();  
-                                } catch (Exception e) {
-                                    out.println(e);
-                                }
-                        %>
-                     </select>&nbsp;&nbsp;
+                                    try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    java.sql.Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
+                                    Statement st= con1.createStatement();  
+                                            ResultSet rs=st.executeQuery("select * from product");  
+                                            while(rs.next())  
+                                            {
+                                                String val =rs.getString(2);
+                                                %>
+
+                                                    
+                                        <option value="<%= val %>" class="prodoption"><% out.println(rs.getString(2)); %></option>
+                                        <%
+                                                
+                                            }
+                                            
+                                            con1.close();  
+                                        } catch (Exception e) {
+                                            out.println(e);
+                                        }
+                                %>
+                            </select>&nbsp;&nbsp;
 
 
 
                             <input type="number" name="pprice" placeholder="Price" ng-model="price">&nbsp;&nbsp;
                             <input type="number" name="pqty" placeholder="Quantity" ng-model="quantity">&nbsp;&nbsp;
                             <input type="number" name="ptotal" placeholder="Total" ng-model="total"><b style="color:white;">{{ total= quantity * price }}
-                            </b>
+                                    </b>
                             <br>
 
 
 
+                            <h3>Product 2</h3>
 
-                            <b class="totalamt">Total Amount</b> &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="total" placeholder="Total Amount" ng-model="totalamt"><b style="color:white;">{{ totalamt= total * 1 }}
-                        </b>
+                            <div data-ng-app="" data-ng-init="p2quantity=1;p2price=5;p2total={{p2quantity * p2price}};totalamt=total;">
+
+                                <select name="p2id" class="prodselect" required>
+                                                <option value="" class="prodoption" >Product Id</option>
+                                            <%
+                                                try {
+                                                Class.forName("com.mysql.jdbc.Driver");
+                                                java.sql.Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
+                                                Statement st= con1.createStatement();  
+                                                        ResultSet rs=st.executeQuery("select * from product");  
+                                                        while(rs.next())  
+                                                        {
+                                                            String val =rs.getString(2);
+                                                            %>
+
+                                                                
+                                                    <option value="<%= val %>" class="prodoption"><% out.println(rs.getString(2)); %></option>
+                                                    <%
+                                                            
+                                                        }
+                                                        
+                                                        con1.close();  
+                                                    } catch (Exception e) {
+                                                        out.println(e);
+                                                    }
+                                            %>
+                                     </select>&nbsp;&nbsp;
+
+
+
+                                <input type="number" name="p2price" placeholder="Price" ng-model="p2price">&nbsp;&nbsp;
+                                <input type="number" name="p2qty" placeholder="Quantity" ng-model="p2quantity">&nbsp;&nbsp;
+                                <input type="number" name="p2total" placeholder="Total" ng-model="p2total"><b style="color:white;">{{ p2total= p2quantity * p2price }}
+                                                            </b><br>
+
+
+                                <b class="totalamt">Total Amount</b> &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" name="total" placeholder="Total Amount" ng-model="totalamt"><b style="color:white;">{{ totalamt= total + p2total }}
+                                </b>
+                            </div>
                         </div>
                         <br><br>
 

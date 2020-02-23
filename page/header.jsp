@@ -27,10 +27,13 @@
         <a href="addbill.jsp" class="menu">Add Bill</a>
         <a href="addproduct.jsp" class="menu">Add Product</a>
         <a href="addcategory.jsp" class="menu">Add category</a>
+        <a href="viewproduct.jsp" class="menu">View Stock</a>
+        <a href="viewbill.jsp" class="menu">View Bill</a>
+        <a href="sales.jsp" class="menu">View Sales</a>
         <a href="viewcategory.jsp" class="menu">View category</a>
 
 
-        <a href="logout.php" class="menu">Logout</a>
+        <a href="logout.jsp" class="menu">Logout</a>
     </div>
 
 

@@ -1,0 +1,1 @@
+Statement st=conn.createStatement(); int i=st.executeUpdate("DELETE FROM users WHERE id="+id);
