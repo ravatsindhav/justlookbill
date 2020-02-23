@@ -1,36 +1,31 @@
 <%@ page import ="java.sql.*" %>
     <%@ page import ="javax.sql.*" %>
-        <%
+        <%@ page import = "java.io.*,java.util.*" %>
+            <%
         try {
-                String userid=request.getParameter("user");
+                String uid=request.getParameter("user");
                 String psw=request.getParameter("psw");
 
-                    Class.forName("com.mysql.jdbc.Driver");
-                    java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
-                    Statement st= con.createStatement();
-                    String sql="select * from admin where unm='"+userid+"'";
-                    Resultset rs=st.executeUpdate(sql);
+               
+                Class.forName("com.mysql.jdbc.Driver");
+                java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/justlook","root","");
+                Statement st= con.createStatement();
+
+                ResultSet rs=st.executeQuery("select * from admin where userid='"+uid+"' and password='"+psw+"'");
                      
-                   while(rs.next())
+                   if(rs.next())
                     {   
                         
-                        /*out.println(rs.getString(3));*/
-                       if(psw.equals(rs.getString(3)))
-                        {
-                            session.setAttribute("uid",userid);
-                            %>
-
-            <jsp:forward page="page/home.jsp" />
-            <%
-                        }
-                        else
-                        {%>
-                <script>
-                    alert("Wrong userid Or Password")
-                </script>
-                <%
-                            out.println("Fail");
-                        }
+                        String pass =rs.getString(3);
+                        session.setAttribute("user",uid);
+                        // New location to be redirected
+                        String site = new String("page/index.jsp");
+                        response.setStatus(response.SC_MOVED_TEMPORARILY);
+                        response.setHeader("Location", site);
+                    }
+                    else
+                    {
+                        out.println("nooo"); 
                     }
                     con.close();  
             } 
