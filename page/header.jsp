@@ -23,7 +23,7 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <br><br>
-        <a href="index.php" class="menu">Home</a>
+        <a href="index.jsp" class="menu">Home</a>
         <a href="addbill.jsp" class="menu">Add Bill</a>
         <a href="addproduct.jsp" class="menu">Add Product</a>
         <a href="addcategory.jsp" class="menu">Add category</a>

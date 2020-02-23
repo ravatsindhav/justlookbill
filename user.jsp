@@ -19,15 +19,16 @@
                         {
                             session.setAttribute("uid",userid);
                             %>
-            <jsp:forward page="page/home.jsp">
-                <%
+
+            <jsp:forward page="page/home.jsp" />
+            <%
                         }
                         else
                         {%>
-                    <script>
-                        alert("Wrong userid Or Password")
-                    </script>
-                    <%
+                <script>
+                    alert("Wrong userid Or Password")
+                </script>
+                <%
                             out.println("Fail");
                         }
                     }
