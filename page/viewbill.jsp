@@ -101,7 +101,7 @@
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <% out.println(rs.getString(1)); %>
+                                            <% String id=rs.getString(1); out.println(id); %>
                                         </td>
 
                                         <td>
@@ -125,7 +125,7 @@
 
 
                                         <td>
-                                            <a href="deletecontact.php?cid=<?php echo $r['id'];?>" class="btn btn-outline-danger">Delete</a>
+                                            <a href="editbill.jsp?bid=<%= id %>" class="btn btn-outline-success">Edit</a>
                                         </td>
                                     </tr>
 

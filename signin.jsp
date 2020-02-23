@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign In</title>
     <link rel="shortcut icon" href="icon/add-user.png" />
-    <link rel="stylesheet" type="text/css" href="../css/signup.css">
+    <link rel="stylesheet" type="text/css" href="css/signup.css">
 </head>
 
 <body class="bg">
@@ -16,15 +16,15 @@
         <form class="signupmodal-content animate" action="user.jsp" method="POST">
 
             <div class="signupimgcontainer">
-                <img src="../icon/user.svg" alt="Avatar" class="avatar">
+                <img src="icon/user.svg" alt="Avatar" class="avatar">
             </div>
 
             <div class="signupcontainer">
                 <center>
-                    <img src="../icon/user.svg" class="icone" width="25px" height="25px">&nbsp;&nbsp;
+                    <img src="icon/user.svg" class="icone" width="25px" height="25px">&nbsp;&nbsp;
                     <input type="text" class="in" placeholder="Enter Email" name="user" required>
                     <br><br>
-                    <img src="../icon/lock.png" class="icone" width="25px" height="25px">&nbsp; &nbsp;
+                    <img src="icon/lock.png" class="icone" width="25px" height="25px">&nbsp; &nbsp;
                     <input type="password" class="in" placeholder="Enter Password" name="psw" required>
                     <br><br>
                     <input type="submit" value="Login" name="sub" class="sub" id onclick="document.getElementById('id01').style.display='none'">
